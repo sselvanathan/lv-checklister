@@ -24,14 +24,14 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="name">{{ __('Name') }}</label>
-                                            <input class="form-control" name="name" type="text"
+                                            <input value="{{ old('name') }}" class="form-control" name="name" type="text"
                                                    placeholder="{{ __('Checklist Group Name') }}">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button class="btn bnt-sm btn-primary" type="submit">{{ __('Save') }}</button>
+                                <button class="btn btn-sm btn-primary" type="submit">{{ __('Save') }}</button>
                             </div>
                         </form>
                     </div>
