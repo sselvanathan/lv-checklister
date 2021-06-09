@@ -12,8 +12,8 @@ class {{ class }} extends Controller
 {
     public function index(): View
     {
-        ${{ modelVariable }}s = {{ model}}::all();
-        return view('{{ modelVariable }}s.index', compact('${{ modelVariable }}s');
+        ${{ modelVariable }}s = {{ model }}::all();
+        return view('{{ modelVariable }}s.index', compact('{{ modelVariable }}s'));
     }
 
     public function create(): View
@@ -28,12 +28,12 @@ class {{ class }} extends Controller
 
     public function show({{ model }} ${{ modelVariable }}): View
     {
-        return view('{{ modelVariable }}s.show, compact('{{ modelVariable }}')');
+        return view('{{ modelVariable }}s.show', compact('{{ modelVariable }}'));
     }
 
     public function edit({{ model }} ${{ modelVariable }}): View
     {
-        return view('{{ modelVariable }}s.edit, compact('{{ modelVariable }}')');
+        return view('{{ modelVariable }}s.edit', compact('{{ modelVariable }}'));
     }
 
     public function update(Request $request, {{ model }} ${{ modelVariable }}): RedirectResponse
