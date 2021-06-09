@@ -101,7 +101,7 @@
 
 @section('scripts')
     <script>
-        InlineEditor
+        ClassicEditor
             .create(document.querySelector('#task-textarea'))
             .catch(error => {
                 console.error(error);
