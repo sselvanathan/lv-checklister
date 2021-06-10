@@ -43,6 +43,18 @@
                     </a>
                 </li>
             @endforeach
+
+            <li class="c-sidebar-nav-title">{{__('Manage Data')}}</li>
+                <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+                    <a
+                        class="c-sidebar-nav-link"
+                        href="{{ route('admin.users.index') }}">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="{{ asset('images/svg/coreui/free.svg#cil-puzzle')}}"></use>
+                        </svg>
+                        {{ __('Users') }}
+                    </a>
+                </li>
         @endif
 
 {{--        <li class="c-sidebar-nav-title">{{__('Other')}}</li>--}}
