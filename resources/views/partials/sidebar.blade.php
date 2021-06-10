@@ -1,17 +1,12 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <ul class="c-sidebar-nav">
-        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{ route('home') }}">
-                <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('images/svg/coreui/free.svg#cil-speedometer')}}"></use>
-                </svg>
-                {{__('Dashboard')}}</a></li>
 
         @if(@auth()->user()->is_admin)
             <li class="c-sidebar-nav-title">{{__('Manage Checklists')}}</li>
             @foreach(\App\Models\ChecklistGroup::with('checklists')->get() as $group)
                 <li class="c-sidebar-nav-item c-sidebar-nav-dropdown c-show">
                     <a
-                        class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle"
+                        class="c-sidebar-nav-link "
                         href="{{ route('admin.checklist_groups.edit', $group->id) }}">
                         <svg class="c-sidebar-nav-icon">
                             <use xlink:href="{{ asset('images/svg/coreui/free.svg#cil-puzzle')}}"></use>
@@ -50,18 +45,7 @@
             @endforeach
         @endif
 
-        <li class="c-sidebar-nav-title">{{__('Other')}}</li>
-        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
-                <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('images/svg/coreui/free.svg#cil-speedometer')}}"></use>
-                </svg>
-                {{ __('Logout') }}
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-        </li>
+{{--        <li class="c-sidebar-nav-title">{{__('Other')}}</li>--}}
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
             data-class="c-sidebar-minimized"></button>
